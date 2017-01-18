@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE7A762F-C78A-4589-9400-3A9DE7281FDD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pacifist.Logic</RootNamespace>
+    <AssemblyName>Pacifist.Logic</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Cards\Action\ActionCard.cs" />
+    <Compile Include="Cards\Action\BreakCard.cs" />
+    <Compile Include="Cards\Action\FixCard.cs" />
+    <Compile Include="Cards\Action\ToolEnum.cs" />
+    <Compile Include="Cards\Character\CharactersEnum.cs" />
+    <Compile Include="Cards\Card.cs" />
+    <Compile Include="Cards\Character\CharacterCard.cs" />
+    <Compile Include="Cards\ICard.cs" />
+    <Compile Include="Cards\Tunnel\Segment.cs" />
+    <Compile Include="Cards\Tunnel\SegmentEnum.cs" />
+    <Compile Include="Cards\Tunnel\SegmentType.cs" />
+    <Compile Include="Cards\Tunnel\TunnelCard.cs" />
+    <Compile Include="Decks\Deck.cs" />
+    <Compile Include="Decks\DeckCharacterExtensions.cs" />
+    <Compile Include="Decks\DeckToolExtensions.cs" />
+    <Compile Include="Decks\DeckTunnelExtensions.cs" />
+    <Compile Include="Decks\IDeckFactory.cs" />
+    <Compile Include="Decks\StandardDeckFactory.cs" />
+    <Compile Include="Game.cs" />
+    <Compile Include="GameBoard.cs" />
+    <Compile Include="Player.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PacifistInfrastructure\PacifistInfrastructure.csproj">
+      <Project>{0897B166-9283-4858-B112-D9A4B77C624E}</Project>
+      <Name>PacifistInfrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
