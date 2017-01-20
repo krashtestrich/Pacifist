@@ -3,7 +3,7 @@ using Pacifist.Logic.Cards;
 using Pacifist.Logic.Cards.Action;
 using Pacifist.Logic.Cards.Character;
 
-namespace Pacifist.Logic
+namespace Pacifist.Logic.Players
 {
     public class Player
     {

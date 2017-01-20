@@ -2,9 +2,9 @@
 {
     public enum SegmentEnum
     {
-        A = 0,
-        B = 1,
-        C = 2,
-        D = 3
+        North = 0,
+        East = 1,
+        South = 2,
+        West = 3
     }
 }

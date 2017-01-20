@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Pacifist.Logic.Cards;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace PacifistUnitTest.DeckTests
 {

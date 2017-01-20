@@ -54,14 +54,23 @@
     <Compile Include="Cards\Tunnel\TunnelCard.cs" />
     <Compile Include="Decks\Deck.cs" />
     <Compile Include="Decks\DeckCharacterExtensions.cs" />
-    <Compile Include="Decks\DeckToolExtensions.cs" />
-    <Compile Include="Decks\DeckTunnelExtensions.cs" />
+    <Compile Include="Decks\Tool\IDeckToolBuilder.cs" />
+    <Compile Include="Decks\Tool\StandardDeckToolBuilder.cs" />
+    <Compile Include="Decks\Duration\IActionToolDuration.cs" />
+    <Compile Include="Decks\Duration\StandardActionToolDuration.cs" />
+    <Compile Include="Decks\StandardDeckTunnelExtensions.cs" />
     <Compile Include="Decks\IDeckFactory.cs" />
     <Compile Include="Decks\StandardDeckFactory.cs" />
+    <Compile Include="Decks\Tool\ToolBuilderHelpers.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameBoard.cs" />
-    <Compile Include="Player.cs" />
+    <Compile Include="Players\Player.cs" />
+    <Compile Include="Players\IPlayerFactory.cs" />
+    <Compile Include="Players\StandardPlayerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rules\IRuleSetFactory.cs" />
+    <Compile Include="Rules\RuleSet.cs" />
+    <Compile Include="Rules\StandardRuleSetFactory.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PacifistInfrastructure\PacifistInfrastructure.csproj">

@@ -2,6 +2,8 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pacifist.Logic.Cards.Tunnel;
 using Pacifist.Logic.Decks;
+using Pacifist.Logic.Decks.Duration;
+using Pacifist.Logic.Decks.Tool;
 
 namespace PacifistUnitTest.DeckTests.StandardDeckFactoryTests
 {
@@ -15,7 +17,7 @@ namespace PacifistUnitTest.DeckTests.StandardDeckFactoryTests
             const int expectedCharacterCards = 15;
             const int expectedOilCards = 10;
 
-            var deckFactory = new StandardDeckFactory();
+            var deckFactory = new StandardDeckFactory(new StandardDeckToolBuilder(new StandardActionToolDuration()));
             var deck = deckFactory.Get();
 
             Assert.AreEqual(expectedPlayingCards, deck.PlayingCards.Count);

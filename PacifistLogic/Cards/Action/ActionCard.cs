@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Pacifist.Logic.Players;
 
 namespace Pacifist.Logic.Cards.Action
 {

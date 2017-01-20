@@ -56,7 +56,9 @@
     <Compile Include="DeckTests\StandardDeckFactoryTests\WhenUsingStandardDeckFactory.cs" />
     <Compile Include="DeckTests\WhenDealingCards.cs" />
     <Compile Include="ExtensionsTests\CollectionsTests\WhenAddingMany.cs" />
+    <Compile Include="GameTests\WhenCreatingGame.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RulesTests\WhenUsingStandardRuleSet.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PacifistInfrastructure\PacifistInfrastructure.csproj">

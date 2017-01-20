@@ -2,7 +2,7 @@
 {
     public enum CharactersEnum
     {
-        BlueTeam = 0,
+        YellowTeam = 0,
         RedTeam = 1,
         Pacifist = 2,
         OilMerchant = 3,

@@ -2,6 +2,7 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Pacifist.Logic.Cards.Action;
 using Pacifist.Logic.Decks;
+using Pacifist.Logic.Decks.Tool;
 
 namespace PacifistUnitTest.DeckTests.DeckExtensionTests
 {
@@ -14,7 +15,8 @@ namespace PacifistUnitTest.DeckTests.DeckExtensionTests
             const int expectedCountOfCards = 3;
             const int expectedUniqueCards = 3;
             var deck = new Deck();
-            deck.AddSingleToolFixCards(1);
+            var helper = new ToolBuilderHelpers(deck);
+            helper.AddSingleToolFixCards(1);
             Assert.AreEqual(expectedCountOfCards, deck.PlayingCards.Count);
 
             var fixCardsDistinct =
@@ -31,7 +33,8 @@ namespace PacifistUnitTest.DeckTests.DeckExtensionTests
             const int expectedCountOfCards = 9;
             const int expectedUniqueCards = 3;
             var deck = new Deck();
-            deck.AddSingleToolFixCards(3);
+            var helper = new ToolBuilderHelpers(deck);
+            helper.AddSingleToolFixCards(3);
             Assert.AreEqual(expectedCountOfCards, deck.PlayingCards.Count);
 
             var fixCardsDistinct =

@@ -4,12 +4,12 @@ namespace Pacifist.Logic.Decks
 {
     public static class DeckCharacterExtensions
     {
-        public static Deck AddBlueTeamCards(
+        public static Deck AddYellowTeamCards(
             this Deck deck,
             int number
         )
         {
-            AddCharacterCards(deck, number, CharactersEnum.BlueTeam);
+            AddCharacterCards(deck, number, CharactersEnum.YellowTeam);
             return deck;
         }
 
