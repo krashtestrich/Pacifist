@@ -1,27 +1,18 @@
 ﻿using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Pacifist.Logic;
 using Pacifist.Logic.Cards.Action;
-using Pacifist.Logic.Decks;
-using Pacifist.Logic.Decks.Duration;
-using Pacifist.Logic.Decks.Tool;
 using Pacifist.Logic.Players;
-using Pacifist.Logic.Rules;
 
 namespace PacifistUnitTest.GameTests.PlayerEventsTests
 {
     [TestClass]
-    public class WhenPlayerPlaysCard
+    public class WhenPlayerPlaysCard : StandardGameTestBase
     {
         [TestMethod]
         public void ShouldAddCardToGameBoard()
         {
             const int expectedResult = 1;
-            var game = new Game(
-                new StandardDeckFactory(
-                    new StandardDeckToolBuilder(
-                        new StandardActionToolDuration())), 
-                new StandardRuleSetFactory());
+            var game = GetGame();
             var player = new Player();
             game.AddPlayer(player);
             player.ReceiveCard(new BreakCard(2, ToolEnum.Drill));

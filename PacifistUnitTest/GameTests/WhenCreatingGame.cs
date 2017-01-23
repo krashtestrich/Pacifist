@@ -8,7 +8,7 @@ using Pacifist.Logic.Rules;
 namespace PacifistUnitTest.GameTests
 {
     [TestClass]
-    public class WhenCreatingGame
+    public class WhenCreatingGame 
     {
         [TestMethod]
         public void ShouldCreateGameWithStandardDeckAndStandardRules()

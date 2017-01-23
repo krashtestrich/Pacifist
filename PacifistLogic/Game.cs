@@ -17,7 +17,6 @@ namespace Pacifist.Logic
         {
             DeckFactory = deckFactory;
             RuleSetFactory = ruleSetFactory;
-            Deck = DeckFactory.Get();
             _players = new List<Player>();
             _discardPile = new List<ICard>();
             GameBoard = new GameBoard();
@@ -31,9 +30,17 @@ namespace Pacifist.Logic
 
         public IEnumerable<Player> Players => _players;
 
-        public Deck Deck { get; }
+        public Deck Deck { get; private set; }
 
         public GameBoard GameBoard { get; }
+
+        public int? Turn { get; private set; }
+
+        public void Start()
+        {
+            Deck = DeckFactory.Get();
+            Turn = 1;
+        }
 
         public void AddPlayer(Player player)
         {

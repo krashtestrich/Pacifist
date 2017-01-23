@@ -10,17 +10,13 @@ using Pacifist.Logic.Rules;
 namespace PacifistUnitTest.GameTests
 {
     [TestClass]
-    public class WhenAddingPlayersToTheGame
+    public class WhenAddingPlayersToTheGame : StandardGameTestBase
     {
         [TestMethod]
         public void ShouldAddPlayerToTheGame()
         {
             const int expectedResult = 1;
-            var game = new Game(
-                new StandardDeckFactory(
-                    new StandardDeckToolBuilder(
-                        new StandardActionToolDuration())), 
-                new StandardRuleSetFactory() );
+            var game = GetGame();
 
             Assert.IsTrue(!game.Players.Any());
             var player = new Player();

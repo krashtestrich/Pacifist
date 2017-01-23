@@ -63,6 +63,7 @@
     <Compile Include="GameTests\WhenAddingPlayersToTheGame.cs" />
     <Compile Include="GameTests\WhenCreatingGame.cs" />
     <Compile Include="GameTests\WhenRemovingPlayersFromTheGame.cs" />
+    <Compile Include="GameTests\WhenStartingStandardGameWithStandardDeck.cs" />
     <Compile Include="PlayerTests\WhenAssigningCharacterCard.cs" />
     <Compile Include="PlayerTests\WhenPerformingRoundEndTasks.cs" />
     <Compile Include="PlayerTests\WhenPlayerPlaysCard.cs" />
@@ -70,6 +71,7 @@
     <Compile Include="PlayerTests\WhenPlayerReceivesCard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RulesTests\WhenUsingStandardRuleSet.cs" />
+    <Compile Include="StandardGameTestBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PacifistInfrastructure\PacifistInfrastructure.csproj">
