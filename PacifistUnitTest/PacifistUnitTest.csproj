@@ -50,13 +50,24 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="CardTests\ActionCardTests\WhenAssigningDuration.cs" />
+    <Compile Include="CardTests\ActionCardTests\WhenDecreasingDuration.cs" />
     <Compile Include="DeckTests\DeckExtensionTests\WhenAddingMultipleToolFixCards.cs" />
     <Compile Include="DeckTests\DeckExtensionTests\WhenAddingSingleToolBreakCards.cs" />
     <Compile Include="DeckTests\DeckExtensionTests\WhenAddingSingleToolFixCards.cs" />
     <Compile Include="DeckTests\StandardDeckFactoryTests\WhenUsingStandardDeckFactory.cs" />
     <Compile Include="DeckTests\WhenDealingCards.cs" />
     <Compile Include="ExtensionsTests\CollectionsTests\WhenAddingMany.cs" />
+    <Compile Include="GameTests\PlayerEventsTests\WhenPlayerActionCardExpires.cs" />
+    <Compile Include="GameTests\PlayerEventsTests\WhenPlayerPlaysCard.cs" />
+    <Compile Include="GameTests\WhenAddingPlayersToTheGame.cs" />
     <Compile Include="GameTests\WhenCreatingGame.cs" />
+    <Compile Include="GameTests\WhenRemovingPlayersFromTheGame.cs" />
+    <Compile Include="PlayerTests\WhenAssigningCharacterCard.cs" />
+    <Compile Include="PlayerTests\WhenPerformingRoundEndTasks.cs" />
+    <Compile Include="PlayerTests\WhenPlayerPlaysCard.cs" />
+    <Compile Include="PlayerTests\WhenPlayerReceivesActionCard.cs" />
+    <Compile Include="PlayerTests\WhenPlayerReceivesCard.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RulesTests\WhenUsingStandardRuleSet.cs" />
   </ItemGroup>

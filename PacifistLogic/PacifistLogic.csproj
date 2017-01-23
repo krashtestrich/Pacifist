@@ -64,6 +64,8 @@
     <Compile Include="Decks\Tool\ToolBuilderHelpers.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameBoard.cs" />
+    <Compile Include="Players\ExpireActionCardEventArgs.cs" />
+    <Compile Include="Players\PlayCardEventArgs.cs" />
     <Compile Include="Players\Player.cs" />
     <Compile Include="Players\IPlayerFactory.cs" />
     <Compile Include="Players\StandardPlayerFactory.cs" />
