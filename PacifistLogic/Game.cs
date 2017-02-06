@@ -1,8 +1,10 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Pacifist.Logic.Cards;
 using Pacifist.Logic.Decks;
 using Pacifist.Logic.Players;
 using Pacifist.Logic.Rules;
+using Pacifist.Logic.Settings;
 
 namespace Pacifist.Logic
 {
@@ -13,18 +15,16 @@ namespace Pacifist.Logic
 
         public Game(
             IDeckFactory deckFactory,
-            IRuleSetFactory ruleSetFactory)
+            IRuleSetFactory ruleSetFactory,
+            IGameSettingsFactory gameSettingsFactory)
         {
-            DeckFactory = deckFactory;
-            RuleSetFactory = ruleSetFactory;
+            Deck = deckFactory.Get();
+            Rules = ruleSetFactory.Get();
+            Settings = gameSettingsFactory.Get();
             _players = new List<Player>();
             _discardPile = new List<ICard>();
             GameBoard = new GameBoard();
         }
-
-        public IDeckFactory DeckFactory { get; }
-
-        public IRuleSetFactory RuleSetFactory { get; }
 
         public IEnumerable<ICard> DiscardPile => _discardPile;
 
@@ -32,18 +32,35 @@ namespace Pacifist.Logic
 
         public Deck Deck { get; private set; }
 
+        public GameStatus Status { get; private set; }
+
+        public RuleSet Rules { get; }
+
+        public GameSettings Settings { get; }
+
         public GameBoard GameBoard { get; }
 
         public int? Turn { get; private set; }
 
         public void Start()
         {
-            Deck = DeckFactory.Get();
+            if (!Settings.AllowBots && _players.Count < Rules.MinPlayers)
+                throw new Exception("Need more players");
+            
+            if (!Settings.AllowBots) return;
+            while (_players.Count < Settings.DesiredPlayerCount)
+            {
+                AddPlayer(new Player());
+            }
+            
             Turn = 1;
+            Status = GameStatus.Started;
         }
 
         public void AddPlayer(Player player)
         {
+            if (_players.Count >= Rules.MaxPlayers)
+                throw new Exception("Game is full");
             player.CardPlayed += PlayCardEventHandler;
             player.ActionExpired += ExpireActionCardEventHandler;
             _players.Add(player);
@@ -56,17 +73,31 @@ namespace Pacifist.Logic
             _players.Remove(player);
         }
 
+        public void ToggleBots(bool enable)
+        {
+            Settings.AllowBots = enable;
+        }
+
+        public void SetDesiredPlayers(int number)
+        {
+            if (number < Rules.MinPlayers
+                || number > Rules.MaxPlayers)
+                throw new Exception();
+
+            Settings.DesiredPlayerCount = number;
+        }
+
         #region Events
         private void PlayCardEventHandler(
             object sender,
-            PlayCardEventArgs playCardEventArgs)
+            CardEventArgs playCardEventArgs)
         {
             GameBoard.CardsInPlay.Add(playCardEventArgs.Card);
         }
 
         private static void ExpireActionCardEventHandler(
             object sender,
-            ExpireActionCardEventArgs expireActionCardEventArgs)
+            CardEventArgs expireActionCardEventArgs)
         {
             _discardPile.Add(expireActionCardEventArgs.Card);
         }

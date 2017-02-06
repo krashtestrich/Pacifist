@@ -1,11 +1,7 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Pacifist.Logic;
-using Pacifist.Logic.Decks;
-using Pacifist.Logic.Decks.Duration;
-using Pacifist.Logic.Decks.Tool;
 using Pacifist.Logic.Players;
-using Pacifist.Logic.Rules;
 
 namespace PacifistUnitTest.GameTests
 {
@@ -22,6 +18,24 @@ namespace PacifistUnitTest.GameTests
             var player = new Player();
             game.AddPlayer(player);
             Assert.AreEqual(expectedResult, game.Players.Count());
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(Exception))]
+        public void ShouldNotAddPlayerToTheGameWhenFull()
+        {
+            var game = GetGame();
+
+            Assert.IsTrue(!game.Players.Any());
+            game.AddPlayer(new Player());
+            game.AddPlayer(new Player());
+            game.AddPlayer(new Player());
+            game.AddPlayer(new Player());
+            game.AddPlayer(new Player());
+            game.AddPlayer(new Player());
+            game.AddPlayer(new Player());
+            game.AddPlayer(new Player());
+            game.AddPlayer(new Player());
         }
     }
 }

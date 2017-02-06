@@ -4,7 +4,7 @@
     {
         public RuleSet Get()
         {
-            return new RuleSet(6);
+            return new RuleSet(6, 8, 2);
         }
     }
 }

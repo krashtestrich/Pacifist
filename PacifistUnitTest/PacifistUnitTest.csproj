@@ -58,12 +58,15 @@
     <Compile Include="DeckTests\StandardDeckFactoryTests\WhenUsingStandardDeckFactory.cs" />
     <Compile Include="DeckTests\WhenDealingCards.cs" />
     <Compile Include="ExtensionsTests\CollectionsTests\WhenAddingMany.cs" />
+    <Compile Include="GameSettings\WhenUsingDefaultGameSettings.cs" />
     <Compile Include="GameTests\PlayerEventsTests\WhenPlayerActionCardExpires.cs" />
     <Compile Include="GameTests\PlayerEventsTests\WhenPlayerPlaysCard.cs" />
     <Compile Include="GameTests\WhenAddingPlayersToTheGame.cs" />
     <Compile Include="GameTests\WhenCreatingGame.cs" />
     <Compile Include="GameTests\WhenRemovingPlayersFromTheGame.cs" />
-    <Compile Include="GameTests\WhenStartingStandardGameWithStandardDeck.cs" />
+    <Compile Include="GameTests\WhenSettingDesiredPlayerCount.cs" />
+    <Compile Include="GameTests\WhenStartingGame.cs" />
+    <Compile Include="GameTests\WhenTogglingBots.cs" />
     <Compile Include="PlayerTests\WhenAssigningCharacterCard.cs" />
     <Compile Include="PlayerTests\WhenPerformingRoundEndTasks.cs" />
     <Compile Include="PlayerTests\WhenPlayerPlaysCard.cs" />

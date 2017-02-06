@@ -64,8 +64,11 @@
     <Compile Include="Decks\Tool\ToolBuilderHelpers.cs" />
     <Compile Include="Game.cs" />
     <Compile Include="GameBoard.cs" />
-    <Compile Include="Players\ExpireActionCardEventArgs.cs" />
-    <Compile Include="Players\PlayCardEventArgs.cs" />
+    <Compile Include="GameStatus.cs" />
+    <Compile Include="Settings\DefaultGameSettingsFactory.cs" />
+    <Compile Include="Settings\GameSettings.cs" />
+    <Compile Include="Settings\IGameSettingsFactory.cs" />
+    <Compile Include="Players\CardEventArgs.cs" />
     <Compile Include="Players\Player.cs" />
     <Compile Include="Players\IPlayerFactory.cs" />
     <Compile Include="Players\StandardPlayerFactory.cs" />

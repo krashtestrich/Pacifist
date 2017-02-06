@@ -23,9 +23,9 @@ namespace Pacifist.Logic.Players
 
         public CharacterCard CharacterCard { get; private set; }
 
-        public event EventHandler<PlayCardEventArgs> CardPlayed;
+        public event EventHandler<CardEventArgs> CardPlayed;
 
-        public event EventHandler<ExpireActionCardEventArgs> ActionExpired;
+        public event EventHandler<CardEventArgs> ActionExpired;
 
         public void PlayCard(int index)
         {
@@ -36,7 +36,7 @@ namespace Pacifist.Logic.Players
 
         protected virtual void OnCardPlayed(ICard card)
         {
-            CardPlayed?.Invoke(this, new PlayCardEventArgs { Card = card });
+            CardPlayed?.Invoke(this, new CardEventArgs { Card = card });
         }
 
         public void AssignCharacterCard(CharacterCard card)
@@ -63,7 +63,7 @@ namespace Pacifist.Logic.Players
 
         protected virtual void OnActionExpired(ICard card)
         {
-            ActionExpired?.Invoke(this, new ExpireActionCardEventArgs { Card = card });
+            ActionExpired?.Invoke(this, new CardEventArgs { Card = card });
         }
 
         public void ReceiveActionCard(ActionCard card)

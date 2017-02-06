@@ -3,6 +3,7 @@ using Pacifist.Logic.Decks;
 using Pacifist.Logic.Decks.Duration;
 using Pacifist.Logic.Decks.Tool;
 using Pacifist.Logic.Rules;
+using Pacifist.Logic.Settings;
 
 namespace PacifistUnitTest
 {
@@ -14,7 +15,8 @@ namespace PacifistUnitTest
                new StandardDeckFactory(
                    new StandardDeckToolBuilder(
                        new StandardActionToolDuration())),
-               new StandardRuleSetFactory());
+               new StandardRuleSetFactory(),
+               new DefaultGameSettingsFactory());
         }
     }
 }
