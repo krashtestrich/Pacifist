@@ -12,12 +12,12 @@ namespace PacifistWeb
                 "~/Scripts/angular-route.min.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/pacifistapp")
-                .IncludeDirectory("~/Scripts/app", "*.js"));
+                .IncludeDirectory("~/Scripts/app", "*.js", true));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                       "~/Content/site.css"));
 
-            BundleTable.EnableOptimizations = true;
+            BundleTable.EnableOptimizations = false;
         }
     }
 }

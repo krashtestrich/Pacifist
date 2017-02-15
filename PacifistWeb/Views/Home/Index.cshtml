@@ -1,14 +1,16 @@
 ﻿<!DOCTYPE html>
 <html ng-app="pacifistApp">
 <head>
-    <title ng-bind="helloAngular"></title>
+    <base href="/">
+    <title>Pacifist!</title>
     @Scripts.Render("~/Scripts/angular")
     @Scripts.Render("~/bundles/pacifistapp")
 </head>
 <body>
-
-    <input type="text" ng-model="helloAngular" />
-    <h1>{{helloAngular}}</h1>
-
+<div id="main">
+    <div ng-view>
+        
+    </div>
+</div>
 </body>
 </html>

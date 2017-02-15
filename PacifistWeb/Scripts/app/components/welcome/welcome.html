@@ -1,0 +1,7 @@
+﻿<div id="welcomeContent" ng-controller="welcomeController">
+    Enter name: <input type="text" ng-model="playerName" />
+    <h1>Welcome, {{playerName}}</h1>
+    <div ng-show="playerName">
+        <input type="button" value="Enter game" ng-click="enterGame()" />
+    </div>
+</div>
