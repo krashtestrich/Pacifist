@@ -11,6 +11,9 @@ namespace PacifistWeb
                 "~/Scripts/angular.min.js", 
                 "~/Scripts/angular-route.min.js"));
 
+            bundles.Add(new ScriptBundle("~/Scripts/jquery").Include(
+                "~/Scripts/jquery-3.1.1.min.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/pacifistapp")
                 .IncludeDirectory("~/Scripts/app", "*.js", true));
 

@@ -1,8 +1,10 @@
 ﻿var welcomeController = ($scope, $location, welcomeService) => {
     $scope.greeting = "Hola!";
     $scope.enterGame = () => {
-        welcomeService.createUser();
-        $location.path("/game");
+        welcomeService.createUser().then(response => {
+            alert("willies!");
+            $location.path("/game");
+        });
     }
 };
 
